@@ -1,22 +1,21 @@
 import React from 'react';
 import './App.css';
+import CustomComp from './components/CustomComp';
 
 let sss = "ss";
+
 class App extends React.Component {
-  state = {
-    value: 'initialValue',
-  };
   componentDidMount() {
     this.add({ name: "vinay" });
   }
 
   add() {
-    console.log(arguments.nodeType);
-    // let sum = 0;
-    // for (let i = 0, j = arguments.length; i < j; i++) {
-    //   sum += arguments[i];
-    // }
-    // return sum;
+    console.log(arguments);
+    let sum = 0;
+    for (let i = 0, j = arguments.length; i < j; i++) {
+      sum += arguments[i];
+    }
+    return sum;
   }
 
   handleEvent(textValue, boolValue) {
@@ -42,9 +41,10 @@ class App extends React.Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            State value {this.state.value}
+            State value
           </a>
         </header>
+        <CustomComp disable={false}/>
         <div>
           <button
             onClick={this.handleEvent.bind(this, "vinay", true)}>
