@@ -34,15 +34,19 @@ class Home extends Component {
   };
 
   renderNestingRoutes = () => {
+    const { path } = this.props.match;
     return (
       <Switch>
-        <Route exact path="/about">
+        <Route exact path={path}>
+          <h3>Please select an option</h3>
+        </Route>
+        <Route path={`${path}/about`}>
           <About />
         </Route>
-        <Route exact path="/contact">
+        <Route path={`${path}/contact`}>
           <ContactUs />
         </Route>
-        <Route exact path="/profile">
+        <Route path={`${path}/profile`}>
           <Profile />
         </Route>
       </Switch>
@@ -51,17 +55,18 @@ class Home extends Component {
 
   render() {
     console.log("===========> Props on Home Route", this.props);
+    const { url } = this.props.match;
     return (
       <div className="default-container">
         <span>This is Home page</span>
-        <Link to={"/about"} >About</Link>
-        <NavLink to={"/contact"} >Contact us</NavLink>
-        <NavLink to={"/profile"} >Profile</NavLink>
+        {this.renderNestingRoutes()}
+        <NavLink to={`${url}/about`} >About</NavLink>
+        <NavLink to={`${url}/contact`} >Contact us</NavLink>
+        <NavLink to={`${url}/profile`} >Profile</NavLink>
         <button onClick={this.gotoLogin}>Go to Login</button>
         <button onClick={this.gotoLoginWithLocationObject}>
           Go to Login passing location object
         </button>
-        {this.renderNestingRoutes()}
       </div>
     );
   }

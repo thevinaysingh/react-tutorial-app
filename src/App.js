@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import logo from './logo.svg';
 import Dashboard from './screens/Dashboard';
@@ -48,10 +48,19 @@ function App() {
           </a>
         </header>
       </div>
-      <Route exact path="/" component={Home}/>
-      <Route exact path="/login" component={Login}/>
-      <Route exact path="/signup" component={Signup}/>
-      <Route exact path="/user/:username" component={Dashboard}/>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
+        <Route path="/home" component={Home}/>
+        <Route exact path="/login" component={Login}/>
+        <Route exact path="/signup" component={Signup}/>
+        <Route exact path="/user/:username" component={Dashboard}/>
+        <Route path="*">
+          {/* Error route */}
+          <h3>Please type in url /home</h3>
+        </Route>
+      </Switch>
     </Router>
   );
 }
