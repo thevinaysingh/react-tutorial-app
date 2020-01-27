@@ -1,20 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import counterReducer from './reducer/counterReducer';
-import ageReducer from './reducer/ageReducer';
-import { combineReducers } from "redux";
-
-
-
-const store = createStore(combineReducers({
-  counterReducer,
-  ageReducer,
-}));
+import { store } from "./store";
 
 ReactDOM.render(
   <Provider store={store}>
