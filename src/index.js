@@ -6,8 +6,15 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import counterReducer from './reducer/counterReducer';
+import ageReducer from './reducer/ageReducer';
+import { combineReducers } from "redux";
 
-const store = createStore(counterReducer);
+
+
+const store = createStore(combineReducers({
+  counterReducer,
+  ageReducer,
+}));
 
 ReactDOM.render(
   <Provider store={store}>
