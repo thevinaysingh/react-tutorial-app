@@ -1,26 +1,28 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import FunctionalComponent from './functionalComponent';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    value: 1
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({value: 1});
+    }, 1000);
+  }
+
+  render() {
+    console.log("This console should be shown in every 1 sec as state update using set timeout");
+    return (
+      <div className="default-container">
+        <p>{this.state.value}</p>
+        <FunctionalComponent value={this.state.value}/>
+      </div>
+    );
+  }
 }
 
 export default App;
