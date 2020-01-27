@@ -1,11 +1,14 @@
 const initialState = {
-  counter: 0
+  counter: 0,
+  loading: false,
 };
 
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "LOADING_SAGA":
+      return { ...state, loading: true };
     case "INCREMENT":
-      return { ...state, counter: state.counter + 1 };
+      return { ...state, counter: state.counter + 1, loading: false };
     case "DECREMENT":
       return { ...state, counter: state.counter - 1 };
     case "INCREMENT_BY_VALUE":

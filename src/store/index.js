@@ -3,6 +3,9 @@ import counterReducer from "../reducer/counterReducer";
 import ageReducer from "../reducer/ageReducer";
 import { combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
+import createSagaMiddleware from "redux-saga";
+
+export const sagaMiddleware = createSagaMiddleware(); 
 
 const logMiddlewareOne = store => {
   return dispatch => {
@@ -12,7 +15,7 @@ const logMiddlewareOne = store => {
         "==========>log action from first middleware",
         JSON.stringify(actionToBeExecuted)
       );
-      return actionToBeExecuted;
+      return actionToBeExecuted; 
     };
   };
 };
@@ -33,5 +36,5 @@ const appReducers = combineReducers({
 
 export const store = createStore(
   appReducers,
-  applyMiddleware(logMiddlewareOne, logMiddlewareTwo, thunk)
+  applyMiddleware(logMiddlewareOne, logMiddlewareTwo, thunk, sagaMiddleware )
 );
