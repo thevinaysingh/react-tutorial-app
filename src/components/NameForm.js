@@ -49,3 +49,55 @@ export default class NameForm extends React.Component {
     );
   }
 }
+
+
+/**
+ * 
+ * Form submit button event params
+nativeEvent: null
+type: (...)
+target: (...)
+currentTarget: (...)
+eventPhase: (...)
+bubbles: (...)
+cancelable: (...)
+timeStamp: (...)
+defaultPrevented: (...)
+isTrusted: (...)
+isDefaultPrevented: (...)
+isPropagationStopped: (...)
+preventDefault: (...)
+stopPropagation: (...)
+dispatchConfig: null
+_targetInst: null
+_dispatchListeners: null
+_dispatchInstances: null
+get nativeEvent: ƒ ()
+set nativeEvent: ƒ (val)
+get type: ƒ ()
+set type: ƒ (val)
+get target: ƒ ()
+set target: ƒ (val)
+get currentTarget: ƒ ()
+set currentTarget: ƒ (val)
+get eventPhase: ƒ ()
+set eventPhase: ƒ (val)
+get bubbles: ƒ ()
+set bubbles: ƒ (val)
+get cancelable: ƒ ()
+set cancelable: ƒ (val)
+get timeStamp: ƒ ()
+set timeStamp: ƒ (val)
+get defaultPrevented: ƒ ()
+set defaultPrevented: ƒ (val)
+get isTrusted: ƒ ()
+set isTrusted: ƒ (val)
+get isDefaultPrevented: ƒ ()
+set isDefaultPrevented: ƒ (val)
+get isPropagationStopped: ƒ ()
+set isPropagationStopped: ƒ (val)
+get preventDefault: ƒ ()
+set preventDefault: ƒ (val)
+get stopPropagation: ƒ ()
+set stopPropagation: ƒ (val)
+*/
