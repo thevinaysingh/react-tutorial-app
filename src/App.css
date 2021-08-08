@@ -37,6 +37,23 @@
   color: #61dafb;
 }
 
+.default-container {
+  padding: 20px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.default-container button {
+  padding: 10px;
+  display: block;
+  background-color: green;
+  color: white;
+  font-size: 15px;
+  margin: 20px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
