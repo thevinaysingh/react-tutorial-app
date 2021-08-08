@@ -66,3 +66,36 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Git cheatsheet
+
+[source1](https://www.techiediaries.com/delete-local-remote-git-branches/)
+
+### Remove All Local Branches not on Remote
+
+$ git branch -r | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | xargs git branch -d
+
+Let's break this command:
+
+First we get all remote branches using the git branch -rcommand
+Next, we get the local branches not on the remote using theegrep -v -f /dev/fd/0 <(git branch -vv | grep origin) command,
+Finally we delete the branches using the xargs git branch -d command.
+
+### Delete All Your Local Git Branches Except Master
+
+$ git branch | grep -v "master" | xargs git branch -D
+We use the grep -v "master" command to search for branches except the master then we delete them using the git branch -D command.
+
+### Delete Local and Remote Branch
+
+$ git branch --merged // Checked merged branch
+$ git branch -d branch-name // Delete local Branch
+$ git push --delete origin branch-name // Delete remote branch
+
+### How do I sync local and remote branches?
+
+git fetch --prune
+
+### How to change the URI (URL) for a remote Git repository?
+
+git remote set-url origin https://github.com/thevinaysingh/react-tutorial-app.git
