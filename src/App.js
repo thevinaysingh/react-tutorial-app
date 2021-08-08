@@ -1,9 +1,12 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, { Component, default as React, default as React } from "react";
 import { connect } from "react-redux";
 import * as ActionCreators from './action/index';
-import { sagaMiddleware } from "./store";
+import "./App.css";
+import NameForm from './components/NameForm';
+import FunctionalComponent from "./functionalComponent";
+import Logo from "./logo";
 import { watchCounterSaga } from "./sagas/sagas";
+import { sagaMiddleware } from "./store";
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +16,13 @@ class App extends Component {
   render() {
     return (
       <div className="default-container">
+      <div className="default-container">
+        <p>State: {this.state.value}</p>
+        <p>Component:</p>
+        <FunctionalComponent value={this.state.value} />
+        <Logo className="App-logo" />
+      </div>
+        <NameForm />
         {this.props.loadingForAge && <p>Age increment is loading ...</p>}
         <p>{this.props.ageFromAgeReducer}</p>
         <button onClick={() => this.props.incrementAgeAsyc()}>
