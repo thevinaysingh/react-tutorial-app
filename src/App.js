@@ -6,6 +6,10 @@ import Logo from "./logo";
 let sss = "ss";
 
 class App extends Component {
+  state = {
+    value: "default",
+  };
+
   componentDidMount() {
     this.add({ name: "vinay" });
   }
