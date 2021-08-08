@@ -29,8 +29,9 @@ yarn upgrade -S @angular
 
 ## npm (In-Progress)
 
-(stackoverflow)[https://stackoverflow.com/questions/16073603/how-to-update-each-dependency-in-package-json-to-the-latest-version]
-(npm package)[https://github.com/raineorshine/npm-check-updates]
+[stackoverflow](https://stackoverflow.com/questions/16073603/how-to-update-each-dependency-in-package-json-to-the-latest-version)
+
+[npm package](https://github.com/raineorshine/npm-check-updates)
 
 ```
 npm i -g npm-check-updates
@@ -57,7 +58,11 @@ Note1: These are core packages/deps for react app project.
 - react-dom
 - react-scripts
 
-(stackoverflow)[https://stackoverflow.com/questions/62650640/yarn-how-do-i-update-each-dependency-in-package-json-to-the-latest-version]
-(source)[https://github.com/tylerlong/yarn-upgrade-all]
+[stackoverflow](https://stackoverflow.com/questions/62650640/yarn-how-do-i-update-each-dependency-in-package-json-to-the-latest-version)
+
+[npm package](https://github.com/tylerlong/yarn-upgrade-all)
+
+```
 npm install -g yarn-upgrade-all
 yarn yarn-upgrade-all
+```
